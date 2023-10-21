@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Média</title>
+</head>
+<body>
+    <img src="imagens/hello kitty.png" alt="">
+    <div class="main">
+        <div class="content">
+            <h1>Calcular média</h1>
+            <h2>Digite abaixo as notas do aluno!</h2>
+        </div>
+        <div class="notas">
+            <input type="text" placeholder="P1" id="notaUm">
+            <input type="text" placeholder="P2" id="notaDois">
+            <input type="text" placeholder="T1" id="trabalhoUm">
+            <input type="text" placeholder="T2" id="trabalhoDois">
+            <button onclick="calcular()">Enviar</button>
+            <div id="output" class="resultado"></div>
+            <a href="" class="botaoLimpar" id="btnLimpar">Limpar</a>
+        </div>
+    </div>
+    <footer>
+        <h3>Desenvolvido por Bruno Wittmann</h3>
+        <p><a href="mailto:brunowitt1310@gmail.com">E-mail: brunowitt1310@gmail.com</a></p>
+    </footer>
+</body>
+<script>
+    function calcular(){
+        var p1 = parseFloat(document.getElementById('notaUm').value);
+        var p2 = parseFloat(document.getElementById('notaDois').value);
+        var t1 = parseFloat(document.getElementById('trabalhoUm').value);
+        var t2 = parseFloat(document.getElementById('trabalhoDois').value);
+        var btnLimpar = document.getElementById('btnLimpar');
+        var mediaFinal = (p1 + p2 + t1 + t2)/4;
+
+        if(mediaFinal <= 10 && mediaFinal >= 0){
+            output.innerHTML = (mediaFinal);
+        }else{
+            alert('Digite um valor válido!')
+        }  
+
+        if(btnLimpar.style.display === 'none'){
+            btn.limpar.style = 'block';
+        }else{
+            btnLimpar.style.display = 'block';
+        }
+    }
+</script>
+</html>
